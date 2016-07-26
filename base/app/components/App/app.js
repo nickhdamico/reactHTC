@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import HeaderComponent from '../Header/Header';
+import Radium from 'radium';
+
 
 export default class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-
     }
   }
 
   render(){
     return(
-      <div>
-        <h1>Hola Mundo</h1>
-      </div>
+      <HeaderComponent />
     );
   }
-
 }
