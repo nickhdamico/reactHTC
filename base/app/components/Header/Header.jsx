@@ -11,15 +11,16 @@ class HeaderComponent extends Component {
   }
   render(){
     return(
-      <div style={styles.base}>
+      <div style={styles.header}>
         <HeaderButton />
       </div>
+
     );
   }
 }
 
 const styles = {
-  base : {
+  header : {
     backgroundColor : '#28282b',
     color : 'white',
     width :'100%',
@@ -29,5 +30,6 @@ const styles = {
     position : 'fixed'
 
   }
+
 }
 export default Radium(HeaderComponent);
