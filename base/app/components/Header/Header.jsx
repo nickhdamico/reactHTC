@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import HeaderButton from './HeaderButton';
 
 class HeaderComponent extends Component {
   constructor(props){
@@ -8,12 +9,10 @@ class HeaderComponent extends Component {
     this.state = {
     }
   }
-
   render(){
-
     return(
       <div style={styles.base}>
-        <button style={styles.button}>Logo</button>
+        <HeaderButton />
       </div>
     );
   }
@@ -21,15 +20,14 @@ class HeaderComponent extends Component {
 
 const styles = {
   base : {
-    background : 'red',
+    backgroundColor : '#28282b',
     color : 'white',
-    width :'40%',
-  },
-  button :{
-    ':hover' : {
-        background : 'yellow',
-        color : 'white'
-      }
+    width :'100%',
+    zIndex :'200',
+    textDecoration : 'none',
+    minHeight : '80px',
+    position : 'fixed'
+
   }
 }
 export default Radium(HeaderComponent);
