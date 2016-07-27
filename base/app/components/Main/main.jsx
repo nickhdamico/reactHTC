@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import MainBuscador from './mainBuscador';
 
 class MainComponent extends Component {
   constructor(props){
@@ -10,9 +11,7 @@ class MainComponent extends Component {
   }
   render(){
     return(
-        <div style={styles.mainWrapper}>
-            <h1>Hola </h1>
-        </div>
+      <MainBuscador />
     );
   }
 }//end MainComponent
@@ -21,9 +20,10 @@ const styles = {
   mainWrapper : {
     height: '600px',
     textAlign: 'center',
-    width : '900px',
+    width : '100%',
     backgroundColor : 'blue',
-    color : 'white'
+    color : 'white',
+    zIndex : '100'
   }
 }
 
