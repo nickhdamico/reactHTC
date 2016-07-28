@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import HeaderButton from './HeaderButton';
+import HeaderLogo from './HeaderLogo';
 
 class HeaderComponent extends Component {
   constructor(props){
@@ -12,6 +13,7 @@ class HeaderComponent extends Component {
   render(){
     return(
       <div style={styles.header}>
+        <HeaderLogo />
         <HeaderButton />
       </div>
 
