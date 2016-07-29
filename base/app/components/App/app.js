@@ -5,7 +5,6 @@ import MainComponent from '../Main/main';
 import generalStyles from './generalStyles';
 import Radium from 'radium';
 
-
 export default class App extends Component {
   constructor(props){
     super(props);

@@ -9,9 +9,13 @@ class MainComponent extends Component {
       this.state = {
       }
   }
+
   render(){
     return(
-      <MainBuscador />
+      <div style={styles.mainWrapper}>
+          <MainBuscador />
+      </div>
+
     );
   }
 }//end MainComponent
@@ -22,8 +26,7 @@ const styles = {
     textAlign: 'center',
     width : '100%',
     backgroundColor : 'blue',
-    color : 'white',
-    zIndex : '100'
+    color : 'white'
   }
 }
 
