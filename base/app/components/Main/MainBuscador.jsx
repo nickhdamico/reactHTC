@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import MainSearchInput from './MainSearchInput';
+import MainSearchButton from './MainSearchButton';
 
-//Este componenete tiene el input y boton incluidos
+//Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
 class MainBuscador extends Component {
   constructor(props){
@@ -32,32 +34,19 @@ const styles = {
   }
 }
 
-class MainSearchInput extends Component {
-
-  render(){
-    return(
-      <div>
-        <input type='text' placeholder="Ingresar"/>
-      </div>
-    );
-  }
-}
 {/*
-  const inputStyles = {
-    base : {
-      width : '200px'
+  class MainSearchButton extends Component {
+    render(){
+      return(
+        <div>
+          <button >Enviar</button>
+        </div>
+      );
     }
   }
+
 */}
 
-class MainSearchButton extends Component {
-  render(){
-    return(
-      <div>
-        <button >Enviar</button>
-      </div>
-    );
-  }
-}
+
 
 export default Radium(MainBuscador);

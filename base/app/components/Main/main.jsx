@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
-import MainBuscador from './mainBuscador';
+import MainBuscador from './MainBuscador';
 
 class MainComponent extends Component {
   constructor(props){
