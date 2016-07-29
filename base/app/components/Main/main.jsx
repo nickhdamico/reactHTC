@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import MainBuscador from './MainBuscador';
+import VideoBG from './VideoBG';
 
 class MainComponent extends Component {
   constructor(props){
@@ -14,6 +15,7 @@ class MainComponent extends Component {
     return(
       <div style={styles.mainWrapper}>
           <MainBuscador />
+          <VideoBG />
       </div>
 
     );
@@ -25,7 +27,7 @@ const styles = {
     height: '600px',
     textAlign: 'center',
     width : '100%',
-    backgroundColor : 'blue',
+    backgroundColor : 'gray',
     color : 'white'
   }
 }
