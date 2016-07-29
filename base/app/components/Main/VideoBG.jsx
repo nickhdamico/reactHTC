@@ -6,8 +6,8 @@ class VideoBG extends Component {
   render(){
     return(
       <div style={styles.base}>
-        <video autoplay loop id="videoHeader">
-            <source src="../Assets/coder.mp4" />
+        <video autoPlay loop >
+            <source src={require("../Assets/coder.mp4")}/>
         </video>
       </div>
     );
