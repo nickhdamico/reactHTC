@@ -18,7 +18,7 @@ const styles = {
     backgroundColor : "pink"
   },
   textBox : {
-    width : '150px',
+    width : '442px',
   }
 }
 

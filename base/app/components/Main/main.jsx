@@ -15,7 +15,6 @@ class MainComponent extends Component {
     return(
       <div style={styles.mainWrapper}>
           <MainBuscador />
-          <VideoBG />
       </div>
 
     );
