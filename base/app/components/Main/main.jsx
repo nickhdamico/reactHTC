@@ -23,7 +23,7 @@ class MainComponent extends Component {
 
 const styles = {
   mainWrapper : {
-    height: '600px',
+    height: '200px',
     textAlign: 'center',
     width : '100%',
     backgroundColor : 'gray',
