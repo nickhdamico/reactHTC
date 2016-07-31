@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import VideoList from './video-list';
+import Video from './video';
 
 class SearchLayout extends Component {
 
@@ -9,6 +11,7 @@ class SearchLayout extends Component {
       <div style={styles.base}>
         <div style={styles.wrapper}>
         
+          <Video />
         </div>
       </div>
 
