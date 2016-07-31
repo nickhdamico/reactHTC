@@ -1,9 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/app'
+import  {Router} from 'react-router';
+import  {Route } from 'react-router';
+import {browserHistory} from 'react-router';
+import {IndexRoute}  from 'react-router';
+
+// Layouts
+
+import MainLayout from './components/App/main-layout';
+import SearchLayout from './components/search-layout';
+
+// Pages
+
+import VideoList from './components/video-list';
+import Video from './components/video';
+
 import Radium from 'radium';
+
+//import Ruteo from './components/App/router';
 
 const content = document.getElementById('content');
 
-ReactDOM.render(<App />
-, content);
+ReactDOM.render((
+  <Router history={browserHistory}>
+    <Route component={MainLayout}>
+      <Route path="/" component={Video}></Route>
+      <Route path="videos">
+        <Route component={SearchLayout}>
+          <IndexRoute component={VideoList} />
+        </Route>
+        <Route path=":videoId" component={Video} />
+      </Route>
+    </Route>
+  </Router>
+
+), content);

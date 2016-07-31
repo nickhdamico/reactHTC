@@ -10,11 +10,11 @@ class SearchLayout extends Component {
     return(
       <div style={styles.base}>
         <div style={styles.wrapper}>
-        
-          <Video />
+          <main>
+            {this.props.children}
+          </main>
         </div>
       </div>
-
     );
   }
 }

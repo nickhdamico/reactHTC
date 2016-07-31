@@ -5,8 +5,10 @@ import MainComponent from '../Main/main';
 import SearchLayout from '../search-layout';
 import generalStyles from './generalStyles';
 import Radium from 'radium';
+import Router from './router';
 
-export default class App extends Component {
+
+export default class MainLayout extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -18,7 +20,9 @@ export default class App extends Component {
       <div className = {generalStyles.reset}>
         <HeaderComponent />
         <MainComponent />
-        <SearchLayout />
+        <main>
+          {this.props.children}
+        </main>
       </div>
     );
   }

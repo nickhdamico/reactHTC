@@ -7,6 +7,7 @@ class Video extends Component {
   render(){
     return(
       <div style={styles.base}>
+        <h1>Video : {this.props.params.videoId}</h1>
       </div>
     );
   }
