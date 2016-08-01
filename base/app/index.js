@@ -23,24 +23,11 @@ ReactDOM.render((
   <Router history={browserHistory}>
 
     <Route component={MainLayout}>
-
         <Route path="/" component={SearchLayout}>
-            <IndexRoute component={Video} />
+          <IndexRoute component={Video} />
+          <Route path="videos" component={VideoList} />
+          <Route path="/videos/:videoId" component={Video} />
         </Route>
-
-        <Route path="videos">
-
-          <Route component={SearchLayout}>
-            <IndexRoute component={VideoList} />
-          </Route>
-
-          <Route path="video/:videoId" component={Video} >
-
-          </Route>
-
-        </Route>
-
-      </Route>
-
+    </Route>
   </Router>
 ), content);
