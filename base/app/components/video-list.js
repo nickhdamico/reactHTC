@@ -9,12 +9,12 @@ class VideoList extends Component {
     return(
       <div >
           <ul>
-            <li style={styles.li}><Link to="video/1">Video 1</Link></li>
-            <li style={styles.li}><Link to="video/2">Video 2</Link></li>
-            <li style={styles.li}><Link to="video/3">Video 3</Link></li>
-            <li style={styles.li}><Link to="video/4">Video 4</Link></li>
-            <li style={styles.li}><Link to="video/5">Video 5</Link></li>
-            <li style={styles.li}><Link to="video/6">Video 6</Link></li>
+            <li style={styles.li}><Link to="videos/1">Video 1</Link></li>
+            <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
+            <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
+            <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
+            <li style={styles.li}><Link to="videos/5">Video 5</Link></li>
+            <li style={styles.li}><Link to="videos/6">Video 6</Link></li>
           </ul>
       </div>
     );
