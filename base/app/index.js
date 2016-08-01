@@ -21,16 +21,26 @@ const content = document.getElementById('content');
 
 ReactDOM.render((
   <Router history={browserHistory}>
+
     <Route component={MainLayout}>
-      <Route path="/" component={SearchLayout}>
-          <IndexRoute component={Video} />
-      </Route>
-      <Route path="videos">
-        <Route component={SearchLayout}>
-          <IndexRoute component={VideoList} />
+
+        <Route path="/" component={SearchLayout}>
+            <IndexRoute component={Video} />
         </Route>
-        <Route path=":videoId" component={Video} />
+
+        <Route path="videos">
+
+          <Route component={SearchLayout}>
+            <IndexRoute component={VideoList} />
+          </Route>
+
+          <Route path="video/:videoId" component={Video} >
+
+          </Route>
+
+        </Route>
+
       </Route>
-    </Route>
+
   </Router>
 ), content);
