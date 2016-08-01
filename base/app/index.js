@@ -15,8 +15,6 @@ import SearchLayout from './components/search-layout';
 import VideoList from './components/video-list';
 import Video from './components/video';
 
-import Radium from 'radium';
-
 //import Ruteo from './components/App/router';
 
 const content = document.getElementById('content');
@@ -24,7 +22,9 @@ const content = document.getElementById('content');
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route component={MainLayout}>
-      <Route path="/" component={Video}></Route>
+      <Route path="/" component={SearchLayout}>
+          <IndexRoute component={Video} />
+      </Route>
       <Route path="videos">
         <Route component={SearchLayout}>
           <IndexRoute component={VideoList} />
@@ -33,5 +33,4 @@ ReactDOM.render((
       </Route>
     </Route>
   </Router>
-
 ), content);
