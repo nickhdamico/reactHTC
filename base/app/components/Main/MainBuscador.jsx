@@ -6,6 +6,11 @@ import MainSearchButton from './MainSearchButton';
 
 //Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
+
+// https://developers.google.com/apis-explorer/?hl=es#p/youtube/v3/youtube.search.list?part=snippet&q=SQL+INYECTION&_h=8&
+// url youtube GET https://www.googleapis.com/youtube/v3/search?part=snippet&q=SQL+INYECTION&key={YOUR_API_KEY}
+
+
 class MainBuscador extends Component {
   constructor(props){
       super(props);

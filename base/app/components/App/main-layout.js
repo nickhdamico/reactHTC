@@ -5,7 +5,6 @@ import MainComponent from '../Main/main';
 import SearchLayout from '../search-layout';
 import generalStyles from './generalStyles';
 import Radium from 'radium';
-import Router from './router';
 
 
 export default class MainLayout extends Component {
