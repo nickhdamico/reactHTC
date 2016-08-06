@@ -4,6 +4,8 @@ import  {Router} from 'react-router';
 import  {Route } from 'react-router';
 import {browserHistory} from 'react-router';
 import {IndexRoute}  from 'react-router';
+import { Provider} from 'react-redux';
+import store from './store';
 
 // Layouts
 
@@ -20,13 +22,15 @@ import Video from './components/video';
 const content = document.getElementById('content');
 
 ReactDOM.render((
-  <Router history={browserHistory}>
-    <Route component={MainLayout}>
-        <Route path="/" component={SearchLayout}>
-            <IndexRoute component={Video} />
-            <Route path="/videos" component={VideoList}  />
-            <Route path="/videos/:videoId" component={Video} />
-        </Route>
-    </Route>
-  </Router>
-), content);
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route component={MainLayout}>
+          <Route path="/" component={SearchLayout}>
+              <IndexRoute component={Video} />
+              <Route path="/videos" component={VideoList}  />
+              <Route path="/videos/:videoId" component={Video} />
+          </Route>
+      </Route>
+    </Router>
+  </Provider>
+    ), content);

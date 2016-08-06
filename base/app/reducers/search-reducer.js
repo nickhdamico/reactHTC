@@ -22,3 +22,5 @@ const searchReducer = function(state = initialState , action){
   return state;
 
 }
+
+export default searchReducer;
