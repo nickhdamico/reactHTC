@@ -4,15 +4,27 @@ import Radium from 'radium';
 import MainBuscador from './MainBuscador';
 import VideoBG from './VideoBG';
 import { loadSearch } from './../../actions/search-actions';
+import { connect }  from 'react-redux';
+import store from './../../store';
 
 class MainComponent extends Component {
 
-  search(event){
+// compontentDidMount(){
+//   const search = function(event){
+//       event.preventDefault();
+//       let query = this.refs.child.getQuery();
+//       console.log(query);
+//       store.dispatch(loadSearch(query));
+//   };
+// }
+
+ search(event){
       event.preventDefault();
       let query = this.refs.child.getQuery();
       console.log(query);
-      
-  }
+      store.dispatch(loadSearch(query));
+      console.log(store.getState());
+  };
 
   render(){
     return(
@@ -34,4 +46,11 @@ const styles = {
   }
 }
 
-export default Radium(MainComponent);
+const mapStateProps = function(store){
+  return {
+    title : store.searchState.title
+  }
+}
+
+ export default connect(mapStateProps)(MainComponent);
+//export default Radium(MainComponent);
