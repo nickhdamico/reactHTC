@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import { loadSearch } from './../../actions/search-actions';
 
 //Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
@@ -12,7 +13,6 @@ class MainBuscador extends Component {
 
   getQuery(){
     return this.refs.search.value;
-    console.log(this.refs.search.value);
   }
 
   render(){

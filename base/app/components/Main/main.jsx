@@ -10,12 +10,14 @@ class MainComponent extends Component {
   search(event){
       event.preventDefault();
       let query = this.refs.child.getQuery();
+      console.log(query);
+      
   }
 
   render(){
     return(
       <div style={styles.mainWrapper}>
-          <MainBuscador  search={this.search.bind(this)} ref='child'/>
+          <MainBuscador search={this.search.bind(this)} ref='child'/>
       </div>
 
     );
