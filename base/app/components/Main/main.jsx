@@ -3,20 +3,19 @@ import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import MainBuscador from './MainBuscador';
 import VideoBG from './VideoBG';
+import { loadSearch } from './../../actions/search-actions';
 
 class MainComponent extends Component {
 
   search(event){
       event.preventDefault();
-
       let query = this.refs.child.getQuery();
-  },
-
+  }
 
   render(){
     return(
       <div style={styles.mainWrapper}>
-          <MainBuscador  search={this.search} ref='child'/>
+          <MainBuscador  search={this.search.bind(this)} ref='child'/>
       </div>
 
     );

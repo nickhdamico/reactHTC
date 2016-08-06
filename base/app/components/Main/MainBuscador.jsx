@@ -10,18 +10,18 @@ import Radium from 'radium';
 
 class MainBuscador extends Component {
 
-  constructor(props){
-      super(props);
-        this.state ={
-
-        }
+  getQuery(){
+    return this.refs.search.value;
+    console.log(this.refs.search.value);
   }
 
   render(){
     return(
       <div style = {styles.searchWrapper}>
-          <input style={styles.textBox} type="text" placeholder="ingresa tu pregunta"></input>
+          <form onSubmit={this.props.search}>
+            <input style={styles.textBox} type="text"  ref="search" placeholder="ingresa tu pregunta"></input>
             <button type="submit "> Buscar </button>
+          </form>
       </div>
     );
   }
