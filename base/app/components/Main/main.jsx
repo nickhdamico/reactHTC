@@ -5,16 +5,18 @@ import MainBuscador from './MainBuscador';
 import VideoBG from './VideoBG';
 
 class MainComponent extends Component {
-  constructor(props){
-    super(props);
-      this.state = {
-      }
-  }
+
+  search(event){
+      event.preventDefault();
+
+      let query = this.refs.child.getQuery();
+  },
+
 
   render(){
     return(
       <div style={styles.mainWrapper}>
-          <MainBuscador />
+          <MainBuscador  search={this.search} ref='child'/>
       </div>
 
     );
