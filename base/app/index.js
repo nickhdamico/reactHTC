@@ -25,7 +25,7 @@ ReactDOM.render((
         <Route path="/" component={SearchLayout}>
             <IndexRoute component={Video} />
             <Route path="/videos" component={VideoList}  />
-            <Route path="/videos/:videoId" component={Video} />    
+            <Route path="/videos/:videoId" component={Video} />
         </Route>
     </Route>
   </Router>
