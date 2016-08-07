@@ -2,6 +2,23 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import { Link } from 'react-router';
+import { loadSearch } from './../actions/search-actions';
+import { setUrl, setVideoList } from './../actions/videos-actions';
+import { connect }  from 'react-redux';
+import store from './../store';
+
+//Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
+
+// https://developers.google.com/apis-explorer/?hl=es#p/youtube/v3/youtube.search.list?part=snippet&q=SQL+INYECTION&_h=8&
+// url youtube GET https://www.googleapis.com/youtube/v3/search?part=snippet&q=SQL+INYECTION&key={YOUR_API_KEY}
+
+
+const mapStateToProps = function(store){
+  return {
+    title : store.searchState.title,
+    url : store.videosState.url
+  }
+}
 
 class VideoList extends Component {
 
@@ -9,7 +26,7 @@ class VideoList extends Component {
     return(
       <div >
           <ul>
-            <li style={styles.li}><Link to="videos/1">Video 1</Link></li>
+            <li style={styles.li}><Link to="videos/1">{this.props.title}</Link></li>
             <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
             <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
             <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
@@ -28,7 +45,10 @@ const styles = {
     backgroundColor : 'white',
     float : 'left',
     margin : '10px'
-  }
+  },
+
 }
 
-export default Radium(VideoList);
+
+export default connect(mapStateToProps)(VideoList);
+//export default Radium(VideoList);

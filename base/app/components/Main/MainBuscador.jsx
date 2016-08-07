@@ -18,7 +18,7 @@ class MainBuscador extends Component {
   render(){
     return(
       <div style = {styles.searchWrapper}>
-          <form onSubmit={this.props.search}>
+          <form onSubmit={this.props.search} >
             <input style={styles.textBox} type="text"  ref="search" placeholder="ingresa tu pregunta"></input>
             <button type="submit "> Buscar </button>
           </form>
