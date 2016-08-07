@@ -8,7 +8,8 @@ import videosReducer from  './videos-reducer';
 // Combine Reducers
 
 var reducers = combineReducers({
-  searchState : searchReducer
+  searchState : searchReducer,
+  videosState : videosReducer
 });
 
 export default reducers;

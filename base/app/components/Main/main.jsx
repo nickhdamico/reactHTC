@@ -7,6 +7,12 @@ import { loadSearch } from './../../actions/search-actions';
 import { connect }  from 'react-redux';
 import store from './../../store';
 
+const mapStateProps = function(store){
+  return {
+    title : store.searchState.title
+  }
+}
+
 class MainComponent extends Component {
 
 // compontentDidMount(){
@@ -20,8 +26,8 @@ class MainComponent extends Component {
 
  search(event){
       event.preventDefault();
+      console.log(store.getState());
       let query = this.refs.child.getQuery();
-      console.log(query);
       store.dispatch(loadSearch(query));
       console.log(store.getState());
   };
@@ -46,11 +52,7 @@ const styles = {
   }
 }
 
-const mapStateProps = function(store){
-  return {
-    title : store.searchState.title
-  }
-}
+
 
  export default connect(mapStateProps)(MainComponent);
 //export default Radium(MainComponent);
