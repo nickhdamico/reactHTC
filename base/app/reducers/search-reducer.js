@@ -1,7 +1,8 @@
 import * as types from '../actions/action-types';
 
 const initialState = {
-  title : ''
+  title : '',
+  url : ''
 };
 
 const searchReducer = function(state = initialState , action){
@@ -11,6 +12,11 @@ const searchReducer = function(state = initialState , action){
     case types.LOAD_SEARCH:
       return Object.assign({}, state , {
           title : action.title
+      });
+
+    case types.CREATE_URL:
+      return Object.assign({} , state,{
+        url : action.url
       });
 
     case types.RESET_SEARCH:

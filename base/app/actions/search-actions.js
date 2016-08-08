@@ -6,3 +6,10 @@ export function loadSearch(title){
     title
   };
 }
+
+export function createUrl(url){
+  return {
+    type : types.CREATE_URL,
+    url
+  };
+}

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import MainBuscador from './MainBuscador';
 import VideoBG from './VideoBG';
-import { loadSearch } from './../../actions/search-actions';
-import { setUrl} from './../../actions/videos-actions';
+import { loadSearch , createUrl} from './../../actions/search-actions';
 import { connect }  from 'react-redux';
 import store from './../../store';
 
@@ -15,18 +14,7 @@ const mapStateProps = function(store){
   }
 }
 
-
-
-//
-// const makeUrl = function (q){
-//     let urlQuery = q.replace(" ", "+");
-//     let url = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+urlQuery;
-//     store.dispatch(setUrl(url));
-//   };
-
 class MainComponent extends Component {
-
-// https://www.googleapis.com/youtube/v3/search?part=snippet&q=SQL+INYECTION&k
 
  search(event){
 
@@ -37,17 +25,17 @@ class MainComponent extends Component {
       let query = this.refs.child.getQuery();
 
       store.dispatch(loadSearch(query));
-      store.dispatch(createUrl(query));
-      console.log(store.getState());
 
-      const getQ =   () => {
-          const q = store.getState().searchState.title;
-          return q;
-      };
+      const videoUrl = () => {
+          let query = store.getState().searchState.title;
+          query = query.split(" ").join("+");
 
-      store.subscribe(getQ);
+          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
+      }
 
-      store.dispatch(setUrl('Nice'));
+      const myQuery = videoUrl();
+
+      store.dispatch(createUrl(myQuery));
 
       console.log(store.getState());
   };
@@ -76,4 +64,3 @@ const styles = {
 
 
  export default connect(mapStateProps)(MainComponent);
-//export default Radium(MainComponent);

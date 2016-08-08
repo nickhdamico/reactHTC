@@ -8,11 +8,11 @@ const initialState = {
 const videosReducer = function(state = initialState, action){
 
   switch(action.types){
-    
-    case types.CREATE_URL:
-      return Object.assign({} , state,{
-        url : action.url
-      });
+    //
+    // case types.CREATE_URL:
+    //   return Object.assign({} , state,{
+    //     url : action.url
+    //   });
 
     case types.CREATE_VIDEO_LIST:
       return Object.assign({} , state , {
