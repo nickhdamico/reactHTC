@@ -11,37 +11,37 @@ import * as videoApi from './../../api/video-api';
 const mapStateProps = function(store){
   return {
     title : store.searchState.title,
-    url : store.videosState.url
+    //url : store.videosState.url
   }
 }
 
 class MainComponent extends Component {
 
-  videoApi.search(event)();
+  // videoApi.search(event);  /* cuando ejecute tiro error Unexpected token videoApi.seach(event)*/
 
- // search(event){
- //
- //      event.preventDefault();
- //
- //      console.log(store.getState());
- //
- //      let query = this.refs.child.getQuery();
- //
- //      store.dispatch(loadSearch(query));
- //
- //      const videoUrl = () => {
- //          let query = store.getState().searchState.title;
- //          query = query.split(" ").join("+");
- //
- //          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
- //      }
- //
- //      const myQuery = videoUrl();
- //
- //      store.dispatch(createUrl(myQuery));
- //
- //      console.log(store.getState());
- //  };
+ search(event){
+
+      event.preventDefault();
+
+      console.log(store.getState());
+
+      let query = this.refs.child.getQuery();
+
+      store.dispatch(loadSearch(query));
+
+      const videoUrl = () => {
+          let query = store.getState().searchState.title;
+          query = query.split(" ").join("+");
+
+          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
+      }
+
+      const myQuery = videoUrl();
+
+      store.dispatch(createUrl(myQuery));
+
+      console.log(store.getState());
+  };
 
   render(){
     return(

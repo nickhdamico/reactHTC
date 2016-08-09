@@ -3,8 +3,20 @@ import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import VideoList from './video-list';
 import Video from './video';
+import { connect }  from 'react-redux';
+import store from './../store';
+
+
+const mapStateToProps = function(store){
+  return {
+    title : store.searchState.title,
+    url : store.videosState.url
+  }
+}
+
 
 class SearchLayout extends Component {
+
 
   render(){
     return(
@@ -34,4 +46,4 @@ const styles = {
   }
 }
 
-export default Radium(SearchLayout);
+export default connect(mapStateToProps)(SearchLayout);

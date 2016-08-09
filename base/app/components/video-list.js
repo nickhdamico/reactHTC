@@ -6,6 +6,7 @@ import { loadSearch } from './../actions/search-actions';
 import { setUrl, setVideoList } from './../actions/videos-actions';
 import { connect }  from 'react-redux';
 import store from './../store';
+import axios from 'axios';
 
 //Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
@@ -20,13 +21,23 @@ const mapStateToProps = function(store){
   }
 }
 
+
 class VideoList extends Component {
+
+
+  createUrlList(){
+    const state = store.getState();
+
+    const url = state.searchState.url;
+
+  }
+
 
   render(){
     return(
       <div >
           <ul>
-            <li style={styles.li}><Link to="videos/1">{this.props.title}</Link></li>
+            <li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
             <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
             <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
             <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
@@ -37,6 +48,8 @@ class VideoList extends Component {
     );
   }
 }
+
+
 
 const styles = {
   li : {
