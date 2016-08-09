@@ -6,6 +6,7 @@ import VideoBG from './VideoBG';
 import { loadSearch , createUrl} from './../../actions/search-actions';
 import { connect }  from 'react-redux';
 import store from './../../store';
+import * as videoApi from './../../api/video-api';
 
 const mapStateProps = function(store){
   return {
@@ -16,29 +17,31 @@ const mapStateProps = function(store){
 
 class MainComponent extends Component {
 
- search(event){
+  videoApi.search(event)();
 
-      event.preventDefault();
-
-      console.log(store.getState());
-
-      let query = this.refs.child.getQuery();
-
-      store.dispatch(loadSearch(query));
-
-      const videoUrl = () => {
-          let query = store.getState().searchState.title;
-          query = query.split(" ").join("+");
-
-          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
-      }
-
-      const myQuery = videoUrl();
-
-      store.dispatch(createUrl(myQuery));
-
-      console.log(store.getState());
-  };
+ // search(event){
+ //
+ //      event.preventDefault();
+ //
+ //      console.log(store.getState());
+ //
+ //      let query = this.refs.child.getQuery();
+ //
+ //      store.dispatch(loadSearch(query));
+ //
+ //      const videoUrl = () => {
+ //          let query = store.getState().searchState.title;
+ //          query = query.split(" ").join("+");
+ //
+ //          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
+ //      }
+ //
+ //      const myQuery = videoUrl();
+ //
+ //      store.dispatch(createUrl(myQuery));
+ //
+ //      console.log(store.getState());
+ //  };
 
   render(){
     return(
