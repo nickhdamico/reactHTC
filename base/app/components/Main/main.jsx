@@ -21,6 +21,7 @@ class MainComponent extends Component {
 
  search(event){
 
+    // Capturamos la query
       event.preventDefault();
 
       console.log(store.getState());
@@ -28,6 +29,9 @@ class MainComponent extends Component {
       let query = this.refs.child.getQuery();
 
       store.dispatch(loadSearch(query));
+
+
+    // Creamos la Url
 
       const videoUrl = () => {
           let query = store.getState().searchState.title;
@@ -41,6 +45,9 @@ class MainComponent extends Component {
       store.dispatch(createUrl(myQuery));
 
       console.log(store.getState());
+
+    //Conectamos a Api youtube
+      
   };
 
   render(){

@@ -8,11 +8,9 @@ import store from './../store';
 import { Link } from 'react-router';
 
 
-
 const mapStateToProps = function(store){
   return {
     title : store.searchState.title,
-    url : store.videosState.url
   }
 }
 
@@ -20,20 +18,22 @@ const mapStateToProps = function(store){
 class SearchLayout extends Component {
 
 
-      createUrlList(){
-        const state = store.getState();
-        const url = state.searchState.url;
-        console.log(url);
-      }
+  createUrlList(){
+
+    const state = store.getState();
+    const url = state.searchState.url;
+    console.log(url);
+  }
+
 
   render(){
     return(
       <div style={styles.base}>
         <div style={styles.wrapper}>
-          <main>
-            <div style ={this.props.display} >
+          <main onLoad={this.createUrlList.bind()}>
+            <div >
                 <ul>
-                  <li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
+                  <li style={styles.li}><button >getState</button></li>
                   <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
                   <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
                   <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
