@@ -25,12 +25,13 @@ const mapStateToProps = function(store){
 class VideoList extends Component {
 
 
-  createUrlList(){
-    const state = store.getState();
+    createUrlList(){
+      const state = store.getState();
+      const url = state.searchState.url;
+      console.log(url);
+    }
+  
 
-    const url = state.searchState.url;
-
-  }
 
 
   render(){
