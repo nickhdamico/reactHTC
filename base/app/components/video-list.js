@@ -14,12 +14,12 @@ import axios from 'axios';
 // url youtube GET https://www.googleapis.com/youtube/v3/search?part=snippet&q=SQL+INYECTION&key={YOUR_API_KEY}
 
 
-const mapStateToProps = function(store){
-  return {
-    title : store.searchState.title,
-    url : store.videosState.url
-  }
-}
+// const mapStateToProps = function(store){
+//   return {
+//     title : store.searchState.title,
+//     url : store.videosState.url
+//   }
+// }
 
 
 class VideoList extends Component {
@@ -30,7 +30,7 @@ class VideoList extends Component {
       const url = state.searchState.url;
       console.log(url);
     }
-  
+
 
 
 
@@ -64,5 +64,5 @@ const styles = {
 }
 
 
-export default connect(mapStateToProps)(VideoList);
+// export default connect(mapStateToProps)(VideoList);
 //export default Radium(VideoList);
