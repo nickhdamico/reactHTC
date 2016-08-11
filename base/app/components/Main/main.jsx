@@ -22,6 +22,7 @@ class MainComponent extends Component {
  search(event){
 
     // Capturamos la query
+
       event.preventDefault();
 
       console.log(store.getState());
@@ -34,7 +35,9 @@ class MainComponent extends Component {
     // Creamos la Url
 
       const videoUrl = () => {
+
           let query = store.getState().searchState.title;
+
           query = query.split(" ").join("+");
 
           return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
@@ -47,7 +50,7 @@ class MainComponent extends Component {
       console.log(store.getState());
 
     //Conectamos a Api youtube
-      
+
   };
 
   render(){
