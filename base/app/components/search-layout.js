@@ -6,6 +6,7 @@ import Video from './video';
 import { connect }  from 'react-redux';
 import store from './../store';
 import { Link } from 'react-router';
+import Youtube from 'react-youtube';
 
 
 const mapStateToProps = function(store){
@@ -32,7 +33,9 @@ class SearchLayout extends Component {
             <div >
                 <ul>
                   <li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-                  <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
+                  {/*<li style={styles.li}><Link to="videos/2">
+                      <Youtube videoId={this.props.title}> </Youtube>
+                                                                    </Link></li>*/}
                   <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
                   <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
                   <li style={styles.li}><Link to="videos/5">Video 5</Link></li>

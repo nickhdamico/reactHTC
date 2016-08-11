@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
+import Youtube from 'react-youtube';
 
 class Video extends Component {
 
@@ -8,6 +9,9 @@ class Video extends Component {
     return(
       <div style={styles.base}>
         <h1>Video : {this.props.params.videoId}</h1>
+          <YouTube
+          videoId="2g811Eo7K8U"
+          />
       </div>
     );
   }
