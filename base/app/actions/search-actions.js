@@ -13,3 +13,10 @@ export function createUrl(url){
     url
   };
 }
+
+export function responseYoutube(response){
+  return {
+    type : types.RESPONSE_YOUTUBE,
+    youTubeResponse : response
+  }
+}

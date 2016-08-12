@@ -7,6 +7,8 @@ import { loadSearch , createUrl} from './../../actions/search-actions';
 import { connect }  from 'react-redux';
 import store from './../../store';
 import * as videoApi from './../../api/video-api';
+import axios from 'axios';
+import promise from 'promise';
 
 const mapStateProps = function(store){
   return {
@@ -22,6 +24,7 @@ class MainComponent extends Component {
  search(event){
 
     // Capturamos la query
+
       event.preventDefault();
 
       console.log(store.getState());
@@ -34,10 +37,12 @@ class MainComponent extends Component {
     // Creamos la Url
 
       const videoUrl = () => {
+
           let query = store.getState().searchState.title;
+
           query = query.split(" ").join("+");
 
-          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query;
+          return "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + query + "&key=AIzaSyBIyzO6I0yihYfNcLqt7hS-3egovMCiH5o";
       }
 
       const myQuery = videoUrl();
@@ -47,7 +52,21 @@ class MainComponent extends Component {
       console.log(store.getState());
 
     //Conectamos a Api youtube
-      
+
+    // https://www.googleapis.com/youtube/v3/search?part=snippet&q=sql+injection&key=AIzaSyBIyzO6I0yihYfNcLqt7hS-3egovMCiH5o
+
+     const conectarYT = () => {
+
+       let query = store.getState().searchState.url;
+
+       axios.get(query).then(response => {
+         store.dispatch(responseYoutube(response.items));
+         console.log(store.getState());
+       })
+     }
+
+     conectarYT()
+
   };
 
   render(){
@@ -70,7 +89,5 @@ const styles = {
     color : 'white'
   }
 }
-
-
 
  export default connect(mapStateProps)(MainComponent);

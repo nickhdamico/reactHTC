@@ -7,6 +7,7 @@ import { setUrl, setVideoList } from './../actions/videos-actions';
 import { connect }  from 'react-redux';
 import store from './../store';
 import axios from 'axios';
+import Youtube from 'react-youtube';
 
 //Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
@@ -24,22 +25,18 @@ import axios from 'axios';
 
 class VideoList extends Component {
 
-
     createUrlList(){
       const state = store.getState();
       const url = state.searchState.url;
       console.log(url);
     }
 
-
-
-
   render(){
     return(
       <div >
           <ul>
             <li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-            <li style={styles.li}><Link to="videos/2">Video 2</Link></li>
+            <li style={styles.li}><Link to="videos/2">Video 2 </Link></li>
             <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
             <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
             <li style={styles.li}><Link to="videos/5">Video 5</Link></li>
