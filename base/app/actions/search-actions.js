@@ -17,6 +17,6 @@ export function createUrl(url){
 export function responseYoutube(response){
   return {
     type : types.RESPONSE_YOUTUBE,
-    youTubeResponse : response
+    response
   }
 }

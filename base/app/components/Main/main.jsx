@@ -59,18 +59,26 @@ class MainComponent extends Component {
 
         let query = store.getState().searchState.url;
 
-        axios.get(query).then((response, error)  => {
-        if(!error){
-            console.log(response.data);
-            //store.dispatch(responseYoutube(response.data.items);
-          }else {
-            console.log(error);
-          }
+        let results = axios.get(query).then((response, error)  => {
+          if(!error){
+              console.log(response.data);
+              //store.dispatch(responseYoutube(response.data.items);
+            }else {
+              console.log(error);
+            }
         });
+
+        return results;
       }
 
-      conectarYT()
 
+      // Pruebo poniendo la respuesta en una variable
+      const data = conectarYT();
+
+      // Revisar responseYouTube porque con otra funcion arranca ejemplo store.dispatch(loadSearch(data));
+      //store.dispatch(loadSearch(data));
+      //store.dispatch(responseYoutube(data));
+      console.log(data);
 
 };//end function Search()
 
