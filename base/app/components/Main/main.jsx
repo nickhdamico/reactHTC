@@ -51,23 +51,29 @@ class MainComponent extends Component {
 
       console.log(store.getState());
 
-    //Conectamos a Api youtube
+      //Conectamos a Api youtube
 
-    // https://www.googleapis.com/youtube/v3/search?part=snippet&q=sql+injection&key=AIzaSyBIyzO6I0yihYfNcLqt7hS-3egovMCiH5o
+      // https://www.googleapis.com/youtube/v3/search?part=snippet&q=sql+injection&key=AIzaSyBIyzO6I0yihYfNcLqt7hS-3egovMCiH5o
 
-     const conectarYT = () => {
+       const conectarYT =  function(){
 
-       let query = store.getState().searchState.url;
+        let query = store.getState().searchState.url;
 
-       axios.get(query).then(response => {
-         store.dispatch(responseYoutube(response.items));
-         console.log(store.getState());
-       })
-     }
+        axios.get(query).then((response, error)  => {
+        if(!error){
+            console.log(response.data);
+            //store.dispatch(responseYoutube(response.data.items);
+          }else {
+            console.log(error);
+          }
+        });
+      }
 
-     conectarYT()
+      conectarYT()
 
-  };
+
+};//end function Search()
+
 
   render(){
     return(
