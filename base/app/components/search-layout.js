@@ -15,7 +15,6 @@ const mapStateToProps = function(store){
   }
 }
 
-
 class SearchLayout extends Component {
 
   createUrlList(){
@@ -23,7 +22,6 @@ class SearchLayout extends Component {
     const url = state.searchState.url;
     console.log(url);
   }
-
 
   render(){
     return(
