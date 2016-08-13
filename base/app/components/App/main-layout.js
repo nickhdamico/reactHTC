@@ -5,13 +5,20 @@ import MainComponent from '../Main/main';
 import SearchLayout from '../search-layout';
 import generalStyles from './generalStyles';
 import Radium from 'radium';
+import { connect }  from 'react-redux';
+import store from './../../store';
 
+
+const mapStateToProps = function(store){
+  return {
+    title : store.searchState.title,
+  }
+}
 
 export default class MainLayout extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-    }
+
+  componentDidMount(){
+
   }
 
   render(){
@@ -26,3 +33,5 @@ export default class MainLayout extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(MainLayout);

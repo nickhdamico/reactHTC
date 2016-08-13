@@ -2,7 +2,9 @@ import * as types from '../actions/action-types';
 
 const initialState = {
   title : '',
-  url : ''
+  url : '',
+  display : 'styles.hide',
+  youTubeResponse : []
 };
 
 const searchReducer = function(state = initialState , action){
@@ -16,8 +18,14 @@ const searchReducer = function(state = initialState , action){
 
     case types.CREATE_URL:
       return Object.assign({} , state,{
-        url : action.url
+        url : action.url,
+        display : 'styles.show'
       });
+
+    case types.RESPONSE_YOUTUBE :
+        return Object.assign({}, state, {
+          youTubeResponse : action.response
+        })
 
     case types.RESET_SEARCH:
         return Object.assign({} , state, {
