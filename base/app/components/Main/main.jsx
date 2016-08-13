@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import MainBuscador from './MainBuscador';
 import VideoBG from './VideoBG';
-import { loadSearch , createUrl} from './../../actions/search-actions';
+import { loadSearch , createUrl, responseYoutube} from './../../actions/search-actions';
 import { connect }  from 'react-redux';
 import store from './../../store';
 import * as videoApi from './../../api/video-api';
@@ -55,14 +55,19 @@ class MainComponent extends Component {
 
       // https://www.googleapis.com/youtube/v3/search?part=snippet&q=sql+injection&key=AIzaSyBIyzO6I0yihYfNcLqt7hS-3egovMCiH5o
 
-       const conectarYT =  function(){
+       const conectarYT = function(){
 
         let query = store.getState().searchState.url;
 
         let results = axios.get(query).then((response, error)  => {
+
           if(!error){
-              console.log(response.data);
-              //store.dispatch(responseYoutube(response.data.items);
+              let info = response.data.items;
+
+              store.dispatch(responseYoutube(info));
+
+              console.log(store.getState());
+
             }else {
               console.log(error);
             }
@@ -71,14 +76,7 @@ class MainComponent extends Component {
         return results;
       }
 
-
-      // Pruebo poniendo la respuesta en una variable
-      const data = conectarYT();
-
-      // Revisar responseYouTube porque con otra funcion arranca ejemplo store.dispatch(loadSearch(data));
-      //store.dispatch(loadSearch(data));
-      //store.dispatch(responseYoutube(data));
-      console.log(data);
+      conectarYT();
 
 };//end function Search()
 
