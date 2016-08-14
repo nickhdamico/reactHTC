@@ -10,7 +10,7 @@ class Video extends Component {
       <div style={styles.base}>
         <h1>Video : {this.props.params.videoId}</h1>
           <YouTube
-          videoId="2g811Eo7K8U"
+          videoId={this.props.youTubeResponse[0].id.videoId}
           />
       </div>
     );

@@ -28,7 +28,6 @@ class SearchLayout extends Component {
     console.log('Respuesta en componente Search-Layout');
     console.log(respuesta);
 
-
   }
 
   createUrlList(){
@@ -45,14 +44,17 @@ class SearchLayout extends Component {
           <main>
             <div >
                 <ul>
-                  <li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-                  {/*<li style={styles.li}><Link to="videos/2">
-                      <Youtube videoId={this.props.title}> </Youtube>
-                                                                    </Link></li>*/}
-                  <li style={styles.li}><Link to="videos/3">Video 3</Link></li>
-                  <li style={styles.li}><Link to="videos/4">Video 4</Link></li>
-                  <li style={styles.li}><Link to="videos/5">Video 5</Link></li>
-                  <li style={styles.li}><Link to="videos/6">Video 6</Link></li>
+                  {this.props.youTubeResponse.map((video, i) => {
+                      return(<li key={i} style={styles.li}>
+                                <Link  to= {'videos/' + i}>
+                                    <img src={video.snippet.thumbnails.medium.url}></img>
+                                </Link>
+                              </li>);
+
+                    })
+                  }
+                  {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
+                  <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
                 </ul>
             </div>
         </main>
