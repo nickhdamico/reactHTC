@@ -12,9 +12,9 @@ import Youtube from 'react-youtube';
 const mapStateToProps = function(store){
   return {
     title : store.searchState.title,
-    url : '',
+    url : store.searchState.url,
     display : 'styles.hide',
-    youTubeResponse : []
+    youTubeResponse : store.searchState.youTubeResponse,
   }
 }
 
@@ -24,14 +24,17 @@ class SearchLayout extends Component {
 
   componentDidMount = () => {
 
+    const respuesta = store.getState();
+    console.log('Respuesta en componente Search-Layout');
+    console.log(respuesta);
 
 
   }
 
   createUrlList(){
     const state = store.getState();
-    const url = state.searchState.url;
-    console.log(url);
+    const url = state.searchState;
+    console.log(url.youTubeResponse);
   }
 
 

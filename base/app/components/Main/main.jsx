@@ -10,10 +10,13 @@ import * as videoApi from './../../api/video-api';
 import axios from 'axios';
 import promise from 'promise';
 
-const mapStateProps = function(store){
+
+const mapStateToProps = function(store){
   return {
     title : store.searchState.title,
-    //url : store.videosState.url
+    url : store.searchState.url,
+    display : 'styles.hide',
+    youTubeResponse : store.searchState.youTubeResponse,
   }
 }
 
@@ -86,6 +89,9 @@ class MainComponent extends Component {
       <div style={styles.mainWrapper}>
           <MainBuscador search={this.search.bind(this)}
                         ref='child'/>
+          <main>
+            {this.props.children}
+          </main>
       </div>
 
     );
@@ -102,4 +108,4 @@ const styles = {
   }
 }
 
- export default connect(mapStateProps)(MainComponent);
+ export default connect(mapStateToProps)(MainComponent);

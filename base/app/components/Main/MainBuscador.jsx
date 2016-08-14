@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import { loadSearch } from './../../actions/search-actions';
+import { Link } from 'react-router';
+
 
 //Esta clase la creamos con importando los componetes MainSearchInput y MainSearchButton
 
@@ -20,7 +22,7 @@ class MainBuscador extends Component {
       <div style = {styles.searchWrapper}>
           <form onSubmit={this.props.search} >
             <input style={styles.textBox} type="text"  ref="search" placeholder="ingresa tu pregunta"></input>
-            <button type="submit "> Buscar </button>
+            <button type="submit "> Buscar</button>
           </form>
       </div>
     );

@@ -12,13 +12,22 @@ import store from './../../store';
 const mapStateToProps = function(store){
   return {
     title : store.searchState.title,
+    url : store.searchState.url,
+    display : 'styles.hide',
+    youTubeResponse : store.searchState.youTubeResponse,
   }
 }
 
 export default class MainLayout extends Component {
 
   componentDidMount(){
+  //  componentDidMount = () => {
 
+      const respuesta = store.getState();
+      console.log('Respuesta en componente Search-Layout');
+      console.log(respuesta);
+
+    //}
   }
 
   render(){

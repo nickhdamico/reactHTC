@@ -13,7 +13,7 @@ import MainLayout from './components/App/main-layout';
 import SearchLayout from './components/search-layout';
 
 // Pages
-
+import Buscador from './components/Main/main';
 import VideoList from './components/video-list';
 import Video from './components/video';
 
@@ -25,11 +25,11 @@ ReactDOM.render((
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route component={MainLayout}>
-          <Route path="/" component={SearchLayout}>
-              <IndexRoute component={Video} />
-              <Route path="/videos" component={VideoList}  />
-              <Route path="/videos/:videoId" component={Video} />
+          <Route path="/" component={Buscador} >
+              <IndexRoute component={SearchLayout} />
           </Route>
+          <Route path="/videos" component={SearchLayout}  />
+          <Route path="/videos/:videoId" component={Video} />
       </Route>
     </Router>
   </Provider>
