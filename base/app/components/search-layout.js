@@ -12,6 +12,9 @@ import Youtube from 'react-youtube';
 const mapStateToProps = function(store){
   return {
     title : store.searchState.title,
+    url : '',
+    display : 'styles.hide',
+    youTubeResponse : []
   }
 }
 
@@ -19,12 +22,17 @@ const mapStateToProps = function(store){
 
 class SearchLayout extends Component {
 
+  componentDidMount = () => {
+
+
+
+  }
+
   createUrlList(){
     const state = store.getState();
     const url = state.searchState.url;
     console.log(url);
   }
-
 
 
   render(){
@@ -50,6 +58,8 @@ class SearchLayout extends Component {
     );
   }
 }
+
+
 
 const styles = {
   base : {
