@@ -43,27 +43,30 @@ class SearchLayout extends Component {
             <div style={styles.container}>
                 <div style={styles.title}>
                     <h1>Learn to code through the error</h1>
+                      <div style={styles.subTitle}>
+                          <span>Type your error, watch your solution </span>
+                      </div>
+                      <main>
+                        <div style={styles.listContainer}>
+                            <ul>
+                              {this.props.youTubeResponse.map((video, i) => {
+                                  return(
+                                      <div >
+                                        <li key={i} style={styles.li}>
+                                          <Link  to= {'videos/' + video.id.videoId}>
+                                              <img src={video.snippet.thumbnails.medium.url}></img>
+                                          </Link>
+                                        </li>
+                                      </div>
+                                    );
+                                })
+                              }
+                              {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
+                              <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
+                            </ul>
+                        </div>
+                    </main>
                 </div>
-                <main>
-                  <div>
-                      <ul>
-                        {this.props.youTubeResponse.map((video, i) => {
-                            return(
-                                <div>
-                                  <li key={i} style={styles.li}>
-                                    <Link  to= {'videos/' + video.id.videoId}>
-                                        <img src={video.snippet.thumbnails.medium.url}></img>
-                                    </Link>
-                                  </li>
-                                </div>
-                              );
-                          })
-                        }
-                        {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-                        <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
-                      </ul>
-                  </div>
-              </main>
             </div>
         </div>
 
@@ -75,12 +78,12 @@ class SearchLayout extends Component {
 
 const styles = {
   base : {
-    background: 'rgba(31,33,36, 0.9)',
+    background: 'black',
     position: 'relative',
     WebkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
     boxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
-    padding: '285px 0 210px',
-    minHeight : '100px'
+    padding: '200px 0 50px',
+    // minHeight : '100px'
 
   },
   container : {
@@ -89,6 +92,7 @@ const styles = {
     paddingLeft : '15px',
     paddingRight : '15px',
     width : '1170px',
+    position: 'relative'
   },
 
   title : {
@@ -99,17 +103,17 @@ const styles = {
   	textTransform: 'uppercase',
   	fontSize: '55px',
   	float:'none'
-    // float: 'left',
-    // height:'50px',
-    // marginTop:'10px',
-    // fontSize: '30px',
-    // lineHeight: '20px',
-    // marginBottom: '5px',
-    // textAlign: 'center',
-    // marginTop:'5px',
-    // color : '#fff'
-
   },
+  subTitle :{
+    textAlign: 'center',
+    color: '#FFF',
+    lineHeight: '65px',
+    zIndex: 0,
+    textTransform: 'lowercase',
+    fontSize: '25px',
+    float:'none'
+  },
+
   wrapper : {
     position : 'absolute',
     top : 250,
@@ -119,18 +123,30 @@ const styles = {
     backgroundColor : 'blue'
   },
   li : {
-    width : '300px',
-    minHeight :'300px',
-    backgroundColor : 'white',
+    width : '400px',
+    minHeight :'200px',
+    backgroundColor : 'back',
     float : 'left',
-    margin : '10px'
+    margin: '10px',
+    padding : '28px 20px 20px 20px',
+    backgroundColor: 'black'
   },
   hide : {
     display : 'none'
   },
   show : {
     display : 'inline'
+  },
+  listContainer : {
+    background: 'rgba(31,33,36, 0.9)',
+    //position: 'absolute',
+    WebkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
+    boxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
+    // padding: '50px 50px 8000px',
+     minHeight : '800px',
+     //left: '50px'
   }
+
 }
 
 export default connect(mapStateToProps)(SearchLayout);
