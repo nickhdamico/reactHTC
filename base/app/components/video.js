@@ -8,9 +8,9 @@ class Video extends Component {
   render(){
     return(
       <div style={styles.base}>
-        <h1>Video : {this.props.params.videoId}</h1>
-          <YouTube
-          videoId={this.props.youTubeResponse[0].id.videoId}
+        {/*<h1>Video : {this.props.params.videoId}</h1>*/}
+          <Youtube
+          videoId={this.props.params.videoId}
           />
       </div>
     );

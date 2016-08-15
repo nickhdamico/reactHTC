@@ -46,7 +46,7 @@ class SearchLayout extends Component {
                 <ul>
                   {this.props.youTubeResponse.map((video, i) => {
                       return(<li key={i} style={styles.li}>
-                                <Link  to= {'videos/' + i}>
+                                <Link  to= {'videos/' + video.id.videoId}>
                                     <img src={video.snippet.thumbnails.medium.url}></img>
                                 </Link>
                               </li>);
