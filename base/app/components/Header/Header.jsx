@@ -23,13 +23,14 @@ class HeaderComponent extends Component {
 
 const styles = {
   header : {
-    backgroundColor : '#28282b',
+    background: 'rgba(31,33,36, 0.9)',
     color : 'white',
     width :'100%',
     zIndex :'200',
     textDecoration : 'none',
     minHeight : '80px',
-    position : 'fixed'
+    position : 'fixed',
+    borderBottom: '3px solid #FC5F45'
 
   }
 

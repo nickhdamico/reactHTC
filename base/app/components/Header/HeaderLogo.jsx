@@ -14,10 +14,13 @@ class HeaderLogo extends Component {
 
 const base = {
   img : {
-    width : '100px',
-    heigt : '100px',
-    backgroundColor : 'white',
-    float : 'left'
+  float: 'left',
+	background: 'logo.png',
+	height: '22px',
+	marginTop: '28px',
+	paddingLeft: '20px',
+	marginLeft: '20px',
+	cursor:'pointer'
   }
 }
 
