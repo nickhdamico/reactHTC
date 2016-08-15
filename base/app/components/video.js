@@ -8,10 +8,11 @@ class Video extends Component {
   render(){
     return(
       <div style={styles.base}>
-        {/*<h1>Video : {this.props.params.videoId}</h1>*/}
-          <Youtube
-          videoId={this.props.params.videoId}
-          />
+          <div style={styles.container}>
+            <Youtube
+            videoId={this.props.params.videoId}
+            />
+          </div>
       </div>
     );
   }
@@ -19,10 +20,17 @@ class Video extends Component {
 
 const styles = {
   base: {
-    width : '800px',
-    minHeight :'500px',
-    backgroundColor : 'white',
-    margin : '50px 100px'
+    background: 'rgba(31,33,36, 0.9)',
+    position: 'relative',
+    WebkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
+    boxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
+    padding: '180px 0 180px',
+    minHeight : '100px'
+  },
+  container : {
+    marginRight : 'auto',
+    marginLeft : 'auto',
+    width : '700px'
   }
 }
 

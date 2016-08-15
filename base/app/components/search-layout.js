@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Radium from 'radium';
 import VideoList from './video-list';
+import HeaderComponent from './Header/Header';
 import Video from './video';
 import { connect }  from 'react-redux';
 import store from './../store';
 import { Link } from 'react-router';
 import Youtube from 'react-youtube';
+
 
 
 const mapStateToProps = function(store){
@@ -17,8 +19,6 @@ const mapStateToProps = function(store){
     youTubeResponse : store.searchState.youTubeResponse,
   }
 }
-
-
 
 class SearchLayout extends Component {
 
@@ -39,36 +39,35 @@ class SearchLayout extends Component {
 
   render(){
     return(
-      <div style={styles.base}>
-          <div style={styles.container}>
-              <div style={styles.title}>
-                  <h1>Lear to code through the error</h1>
-              </div>
-              <main>
-                <div>
-                    <ul>
-                      {this.props.youTubeResponse.map((video, i) => {
-                          return(
-                              <div style={styles.wrapper}>
-                                <li key={i} style={styles.li}>
-                                  <Link  to= {'videos/' + video.id.videoId}>
-                                      <img src={video.snippet.thumbnails.medium.url}></img>
-                                  </Link>
-                                </li>
-                              </div>
-                            );
-                        })
-                      }
-                      {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-                      <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
-                    </ul>
+        <div style={styles.base}>
+            <div style={styles.container}>
+                <div style={styles.title}>
+                    <h1>Learn to code through the error</h1>
                 </div>
-            </main>
+                <main>
+                  <div>
+                      <ul>
+                        {this.props.youTubeResponse.map((video, i) => {
+                            return(
+                                <div>
+                                  <li key={i} style={styles.li}>
+                                    <Link  to= {'videos/' + video.id.videoId}>
+                                        <img src={video.snippet.thumbnails.medium.url}></img>
+                                    </Link>
+                                  </li>
+                                </div>
+                              );
+                          })
+                        }
+                        {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
+                        <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
+                      </ul>
+                  </div>
+              </main>
+            </div>
+        </div>
 
-          </div>
-
-      </div>
-    );
+          );
   }
 }
 
@@ -76,9 +75,9 @@ class SearchLayout extends Component {
 
 const styles = {
   base : {
-    background: 'rgba(0, 0, 0, 0.5)',
+    background: 'rgba(31,33,36, 0.9)',
     position: 'relative',
-    webkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
+    WebkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
     boxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
     padding: '285px 0 210px',
     minHeight : '100px'

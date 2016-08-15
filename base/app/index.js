@@ -28,8 +28,14 @@ ReactDOM.render((
           <Route path="/" component={Buscador} >
               <IndexRoute component={SearchLayout} />
           </Route>
-          <Route path="/videos" component={SearchLayout}  />
-          <Route path="/videos/:videoId" component={Video} />
+          <Route path="/videos" component={Buscador} >
+              <IndexRoute component={SearchLayout} />
+          </Route>
+          {/*<Route path="/videos" component={SearchLayout}  />*/}
+          <Route path="/videos/:videoId" component={Buscador} >
+            <IndexRoute component={Video} />
+          </Route>
+
       </Route>
     </Router>
   </Provider>
