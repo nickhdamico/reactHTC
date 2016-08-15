@@ -42,22 +42,22 @@ class SearchLayout extends Component {
       <div style={styles.base}>
         <div style={styles.wrapper}>
           <main>
-            <div >
-                <ul>
-                  {this.props.youTubeResponse.map((video, i) => {
-                      return(<li key={i} style={styles.li}>
-                                <Link  to= {'videos/' + video.id.videoId}>
-                                    <img src={video.snippet.thumbnails.medium.url}></img>
-                                </Link>
-                              </li>);
+              <div >
+                  <ul>
+                    {this.props.youTubeResponse.map((video, i) => {
+                        return(<li key={i} style={styles.li}>
+                                  <Link  to= {'videos/' + video.id.videoId}>
+                                      <img src={video.snippet.thumbnails.medium.url}></img>
+                                  </Link>
+                                </li>);
 
-                    })
-                  }
-                  {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
-                  <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
-                </ul>
-            </div>
-        </main>
+                      })
+                    }
+                    {/*<li style={styles.li}><button onClick={this.createUrlList.bind()}>getState</button></li>
+                    <li style={styles.li}><Link to="videos/3">{this.props.title}</Link></li>*/}
+                  </ul>
+              </div>
+            </main>
         </div>
       </div>
     );
