@@ -8,8 +8,8 @@ class HeaderButton extends Component {
     return(
         <div >
           <ul style={styles.base}>
-            <li key="one" style={styles.li}>Login</li>
-            <li key="two" style={styles.li}>Registracion</li>
+            <li key="one" style={styles.li}><span>Login</span></li>
+            <li key="two" style={styles.li}><span>Registracion</span></li>
           </ul>
         </div>
     );
@@ -21,8 +21,9 @@ const styles  = {
     float: 'right',
     listStyle: 'none',
     display: 'inline',
-    width: '200px',
-    marginTop: '20px',
+    width: '350px',
+    marginTop: '35px',
+    display: '-webkit-inline-box'
   },
   li : {
     padding: '0px 15px',
@@ -36,7 +37,7 @@ const styles  = {
     ':hover' : {
         background : 'black',
           border: '2px solid white',
-          color : 'white'
+          color : '#fff',
       },
   }
 }
