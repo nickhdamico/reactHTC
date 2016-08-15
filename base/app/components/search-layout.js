@@ -139,12 +139,12 @@ const styles = {
   },
   listContainer : {
     background: 'rgba(31,33,36, 0.9)',
-    //position: 'absolute',
     WebkitBoxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
     boxShadow: '0px 5px 11px 0px rgba(50, 50, 50, 0.08)',
     // padding: '50px 50px 8000px',
      minHeight : '800px',
-     //left: '50px'
+     marginLeft : '30px',
+     paddingLeft:' 120px'
   }
 
 }
