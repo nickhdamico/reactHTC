@@ -6,7 +6,7 @@ class HeaderLogo extends Component {
     render(){
       return(
         <div >
-          <img type="image" style={base.img} src={require('./logo.png')}  />
+          <img type="image" style={base.img} src={require('./../Assets/logoHTC.png')}  />
         </div>
       );
     }
@@ -16,8 +16,8 @@ const base = {
   img : {
   float: 'left',
 	background: 'logo.png',
-	height: '22px',
-	marginTop: '28px',
+	height: '80px',
+	marginTop: '1px',
 	paddingLeft: '20px',
 	marginLeft: '20px',
 	cursor:'pointer'
