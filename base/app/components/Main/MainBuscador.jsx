@@ -31,11 +31,14 @@ class MainBuscador extends Component {
 
 const styles = {
   searchWrapper : {
-    backgroundColor : 'yellow',
-    top : '150px',
-    left : '350px',
-    position : 'absolute',
-    width : '500px'
+      background: '#FC5F45',
+      position: 'absolute',
+      width: '100%',
+      textAlign:'center',
+      top : '81px',
+      height : '60px',
+      position : 'fixed',
+      zIndex: 200
   },
   button : {
     float : "right",
@@ -46,7 +49,12 @@ const styles = {
     backgroundColor : "pink"
   },
   textBox : {
-    width : '442px',
+    width:' 550px',
+    borderRadius: '4px',
+    height: '30px',
+    paddingTop: '1px',
+    marginTop: '15px',
+    border: '1px solid #cf4f3a'
   }
 }
 

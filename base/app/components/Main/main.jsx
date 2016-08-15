@@ -86,7 +86,7 @@ class MainComponent extends Component {
 
   render(){
     return(
-      <div style={styles.mainWrapper}>
+      <div >
           <MainBuscador search={this.search.bind(this)}
                         ref='child'/>
           <main>
@@ -100,11 +100,9 @@ class MainComponent extends Component {
 
 const styles = {
   mainWrapper : {
-    height: '200px',
+    height: '100px',
     textAlign: 'center',
     width : '100%',
-    backgroundColor : 'gray',
-    color : 'white'
   }
 }
 
