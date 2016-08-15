@@ -25,13 +25,14 @@ const styles  = {
     marginTop: '20px',
   },
   li : {
-    float: 'left',
-    border: '1px solid white',
-    borderRadius: '2px',
-    marginLeft: '3%',
-    padding: '3%',
-    fontSize: 'larger',
-    color: '#ffffff',
+    padding: '0px 15px',
+  	color: '#919495',
+  	borderRadius: '4px',
+  	marginRight: '5px',
+  	/*font-family: 'Titillium Web', sans-serif;*/
+  	textTransform: 'uppercase',
+  	fontWeight: 'bold',
+  	fontSize: '16px',
     ':hover' : {
         background : 'black',
           border: '2px solid white',
