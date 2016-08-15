@@ -22,7 +22,7 @@ class MainBuscador extends Component {
       <div style = {styles.searchWrapper}>
           <form onSubmit={this.props.search} >
             <input style={styles.textBox} type="text"  ref="search" placeholder="ingresa tu pregunta"></input>
-            <button type="submit "> Buscar</button>
+            <button style={styles.button} type="submit "> Buscar</button>
           </form>
       </div>
     );
@@ -38,11 +38,25 @@ const styles = {
       top : '81px',
       height : '60px',
       position : 'fixed',
+      fontSize: '14px',
       zIndex: 200
   },
   button : {
-    float : "right",
-    backgroundColor : "green"
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    padding: '9px 35px 9px 35px',
+    borderRadius: '4px',
+    margin: '10px',
+    border: 'none',
+    backgroundColor: 'rgba(31,33,36, 0.9)',
+    boxShadow: 'none',
+    textShadow: 'none',
+    fontWeight: 400,
+    verticalAlign: 'middle',
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+    fontSize: '15px',
+    color: '#FFF'
   },
   baseBox : {
     float : "left",
@@ -54,7 +68,13 @@ const styles = {
     height: '30px',
     paddingTop: '1px',
     marginTop: '15px',
-    border: '1px solid #cf4f3a'
+    border: '1px solid #cf4f3a',
+    textTransform: 'uppercase',
+    color: 'rgba(31,33,36, 0.9)',
+    fontWeight: 400,
+    fontSize: '14px',
+    textAlign: 'center'
+
   }
 }
 
